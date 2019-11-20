@@ -1,19 +1,21 @@
 <template>
     <div class="container">
-        <List/>
-        <NewCourse/>
+      <h1 class="text-center mt-5 text-info">Codeignither con Vue.js</h1>
+        <!-- <Courses/> -->
+        <!-- <NewCourse/> -->+
+        <router-view></router-view>
 
     </div>
 </template>
 
 <script>
 
-import List from './components/List.vue'
+import Courses from './components/ListCourse/Courses.vue'
 import NewCourse from './components/NewCourse.vue'
 
 export default {
   components: {
-    List,
+    Courses,
     NewCourse
   }
 }

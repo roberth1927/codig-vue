@@ -16,7 +16,12 @@
             </div>
             <div class="container">
                 <button  type="submit" class="btn btn-outline-success">Registrar</button>
-                <button  class="btn btn-outline-danger">Cancelar</button>
+                 <router-link
+                    to="/"
+                    tag="button"
+                    class="btn btn-outline-danger">
+                    Cancelar
+           </router-link> 
             </div>
             
         </form>
