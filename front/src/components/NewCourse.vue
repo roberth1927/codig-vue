@@ -21,7 +21,7 @@
                     tag="button"
                     class="btn btn-outline-danger">
                     Cancelar
-           </router-link> 
+                </router-link> 
             </div>
             
         </form>
