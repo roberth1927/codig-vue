@@ -1,23 +1,23 @@
 <template>
     <div class="row">
-        <div class="col-md-9 offset-2 mt-5">
-           <table class="table table-hover table-dark table-striped border-dark border shadow-lg">
+        <div class="col-md-9 offset-2 mt-54">
+           <table v-if="courses.length > 0" class="table table-hover table-dark table-striped border-dark border shadow-lg">
                <thead>
-                   <th>id</th>
-                   <th>tex1928</th>
-                   <th>tex2</th>
-                   <th>tex3</th>
-                   <th>tex4</th>
+                   <th>#id</th>
+                   <th>title</th>
+                   <th>couponCode</th>
+                   <th>price</th>
+                   <th>Actions</th>
                </thead>
                <tbody>
-                   <Course/>
+                   <Course v-for="course in courses" :key="course.id" :course="course"/>
                </tbody>
            </table>
-           <router-link
-           to="/nuevo"
-           tag="button"
-           class="btn-dark btn text-info float-right">
-           Agregar Nuevo
+           <div v-else class="alert alert-primary border-0">
+               No hay cursos agregados
+           </div>
+           <router-link to="/nuevo" tag="button" class="btn-dark btn text-info float-right">
+                Agregar Nuevo
            </router-link> 
         </div>
     </div>
@@ -29,6 +29,11 @@ import Course from "./Course"
 export default {
     components : {
         Course
-    }
+    },
+    computed: {
+        courses(){
+            return this.$store.getters.getCourses
+        }
+    },
 }
 </script>

@@ -7,7 +7,7 @@ class Course_model extends CI_Model {
     public function __construct()
     {
         parent::__construct();
-        $this->tableName = "cources";
+        $this->tableName = "courses";
     }
 
     public function get_all(){
@@ -15,7 +15,12 @@ class Course_model extends CI_Model {
     }
 
     public function save($data = array()){
-        return json_encode($this->db->insert($this->tableName, $data));
+        $insert = $this->db->insert($this->tableName, $data);
+        if($insert){
+            return json_encode(array(
+                "insert_id" => $this->db->insert_id()
+            ));
+        }
     }
 
     public function update($data = array(), $where = array()){
