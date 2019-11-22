@@ -4,10 +4,10 @@
            <table v-if="courses.length > 0" class="table table-hover table-dark table-striped border-dark border shadow-lg">
                <thead>
                    <th>#id</th>
-                   <th>title</th>
-                   <th>couponCode</th>
-                   <th>price</th>
-                   <th>Actions</th>
+                   <th>Ttiulo</th>
+                   <th>Descripción</th>
+                   <th>Precio</th>
+                   <th>Acciones</th>
                </thead>
                <tbody>
                    <Course v-for="course in courses" :key="course.id" :course="course"/>
